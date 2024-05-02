@@ -1,0 +1,1 @@
+ C:\\Users\\rchmn\\Documents\\nyamnyam\\mindscape\\.dart_tool\\flutter_build\\01c432bad67d758df93a1f581438d90c\\native_assets.yaml: 

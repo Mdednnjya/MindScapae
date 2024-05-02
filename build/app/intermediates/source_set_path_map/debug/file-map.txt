@@ -1,0 +1,12 @@
+com.example.mindscape.app-core-1.6.0-0 C:\Users\rchmn\.gradle\caches\transforms-3\21f88ad99d8cda7403bf7010e4dd6dc7\transformed\core-1.6.0\res
+com.example.mindscape.app-jetified-annotation-experimental-1.1.0-1 C:\Users\rchmn\.gradle\caches\transforms-3\27a9a0d7312b398b3245718e3b8cbbae\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.mindscape.app-jetified-window-1.0.0-beta04-2 C:\Users\rchmn\.gradle\caches\transforms-3\d46a629697425a9fb2dafe148b7b5487\transformed\jetified-window-1.0.0-beta04\res
+com.example.mindscape.app-jetified-window-java-1.0.0-beta04-3 C:\Users\rchmn\.gradle\caches\transforms-3\ec13e5299b6338a53513689de50703b4\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.mindscape.app-debug-4 C:\Users\rchmn\Documents\nyamnyam\mindscape\android\app\src\debug\res
+com.example.mindscape.app-main-5 C:\Users\rchmn\Documents\nyamnyam\mindscape\android\app\src\main\res
+com.example.mindscape.app-pngs-6 C:\Users\rchmn\Documents\nyamnyam\mindscape\build\app\generated\res\pngs\debug
+com.example.mindscape.app-resValues-7 C:\Users\rchmn\Documents\nyamnyam\mindscape\build\app\generated\res\resValues\debug
+com.example.mindscape.app-rs-8 C:\Users\rchmn\Documents\nyamnyam\mindscape\build\app\generated\res\rs\debug
+com.example.mindscape.app-mergeDebugResources-9 C:\Users\rchmn\Documents\nyamnyam\mindscape\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.mindscape.app-mergeDebugResources-10 C:\Users\rchmn\Documents\nyamnyam\mindscape\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.mindscape.app-merged_res-11 C:\Users\rchmn\Documents\nyamnyam\mindscape\build\app\intermediates\merged_res\debug
