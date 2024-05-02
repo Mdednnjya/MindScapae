@@ -9,7 +9,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Lakukan inisialisasi atau navigasi ke halaman berikutnya setelah beberapa detik
   }
 
   @override
@@ -20,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/logo.png'),
-            SizedBox(height: 16), // Atau tampilkan teks "Loading..."
+            SizedBox(height: 16), 
           ],
         ),
       ),
