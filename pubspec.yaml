@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_nav_bar: ^5.0.6
   flutter_svg: ^2.0.10+1
+  fluttertoast: ^8.2.5
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +64,13 @@ flutter:
   assets:
     - assets/images/
     - assets/images/home/
+    - assets/images/home/daun.svg
+    - assets/images/home/Live.svg
     - assets/images/icons/
+    - assets/images/auth/
+    - assets/images/auth/log_text.svg
+    - assets/images/auth/create_an account_text.svg
+    - assets/images/auth/logo.png
     - assets/images/welcome_asset.svg
     - assets/images/logo_no_text.svg
     # - assets/fonts/

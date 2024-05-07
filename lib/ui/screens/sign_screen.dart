@@ -42,7 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 100,
             ),
             const SizedBox(height: 14),
-            SvgPicture.asset('assets/images/create_an account_text.svg'),
+            SvgPicture.asset('assets/images/auth/create_an account_text.svg'),
             const SizedBox(height: 32.0),
             Form(
               key: _formKey,
@@ -108,21 +108,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   onPressed: () {
                     // Handle Facebook sign-up
                   },
-                  asset: 'assets/images/facebook_logo.svg',
+                  asset: 'assets/images/auth/facebook_logo.svg',
                 ),
                 const SizedBox(width: 16.0),
                 _buildSocialButton(
                   onPressed: () {
                     // Handle Twitter sign-up
                   },
-                  asset: 'assets/images/twitter_logo.svg',
+                  asset: 'assets/images/auth/twitter_logo.svg',
                 ),
                 const SizedBox(width: 16.0),
                 _buildSocialButton(
                   onPressed: () {
                     // Handle Google sign-up
                   },
-                  asset: 'assets/images/google_logo.svg',
+                  asset: 'assets/images/auth/google_logo.svg',
                 ),
               ],
             ),

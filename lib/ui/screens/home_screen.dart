@@ -1,10 +1,18 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../widgets/mood_button.dart';
+import '../utils/feedback_utils.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String? selectedMood;
 
   @override
   Widget build(BuildContext context) {
@@ -14,98 +22,179 @@ class HomePage extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.cyan,
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(45),
-            bottomRight: Radius.circular(45),
+            bottomLeft: Radius.circular(35),
+            bottomRight: Radius.circular(35),
           ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CircleAvatar(
-              radius: 30,
-              backgroundImage: AssetImage('assets/images/people.png'),
+            Container(
+              child: CircleAvatar(
+                radius: 30,
+                backgroundImage: const AssetImage('assets/images/people.png'),
+              ),
             ),
+
             Flexible(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Hello, Your Name',
+                    'Hello, [Your Name]',
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Inter',
+                      letterSpacing: -0.41,
                     ),
                   ),
                   Text(
                     'How are you doing today?',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 15,
+                      color: Colors.white,
                       fontWeight: FontWeight.normal,
+                      fontFamily: 'Inter',
+                      letterSpacing: -0.41,
                     ),
                   ),
                 ],
               ),
             ),
-            IconButton(
-              icon: Icon(Icons.notifications_active),
-              onPressed: () {
-                Navigator.pushNamed(context, '/search');
-              },
+            Stack(
+              children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.notifications_active,
+                    size: 30,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/search');
+                  },
+                ),
+                // Menambahkan bulatan merah ketika ada notifikasi
+                // if (_hasNotification)
+                //   Positioned(
+                //     top: 0,
+                //     right: 0,
+                //     child: Container(
+                //       width: 10,
+                //       height: 10,
+                //       decoration: BoxDecoration(
+                //         color: Colors.red,
+                //         shape: BoxShape.circle,
+                //       ),
+                //     ),
+                //   ),
+              ],
             )
           ],
         ),
       ),
-      const SizedBox(height: 20),
+      const SizedBox(height: 15),
       Container(
         padding: const EdgeInsets.fromLTRB(55, 5, 55, 1),
         child: Column(
           children: [
         Text(
-          'Your mood level,',
+          'Choose your mood level:',
           style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.bold,
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+            fontFamily: 'Inter',
+            letterSpacing: -0.41,
           ),
         ),
-        SizedBox(height: 10),
-        LinearProgressIndicator(
-          value: 0.5, // Replace with the desired value between 0 and 1
-          minHeight: 10,
-          backgroundColor: Colors.grey,
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
-        ),
+        const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                MoodButton(
+                  emoji: '\u{1F600}',
+                  label: 'Joyful',
+                  mood: 'joyful',
+                  isSelected: selectedMood == 'joyful',
+                  onPressed: () {
+                    setState(() {
+                      selectedMood = 'joyful';
+                    });
+                    showFeedback(context, 'joyful');
+                  },
+                ),
+                MoodButton(
+                  emoji: '\u{1F61F}',
+                  label: 'Anxious',
+                  mood: 'anxious',
+                  isSelected: selectedMood == 'anxious',
+                  onPressed: () {
+                    setState(() {
+                      selectedMood = 'anxious';
+                    });
+                    showFeedback(context, 'anxious');
+                  },
+                ),
+                MoodButton(
+                  emoji: '\u{1F622}',
+                  label: 'Sad',
+                  mood: 'sad',
+                  isSelected: selectedMood == 'sad',
+                  onPressed: () {
+                    setState(() {
+                      selectedMood = 'sad';
+                    });
+                    showFeedback(context, 'sad');
+                  },
+                ),
+              ],
+            ),
           ],
         ),
       ),
+      const SizedBox(height: 5),
       Container(
         padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-        image: AssetImage('assets/images/live.png'),
-        fit: BoxFit.none,
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   image: DecorationImage(
+        // image: AssetImage('assets/images/home/daun.svg'),
+        //   ),
+        // ),
         child: Column(
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '13.671',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(width: 1),
+                SvgPicture.asset(
+                  'assets/images/home/Live.svg',
+                  width: 24,
+                  height: 24,
+                ),
+              ],
+            ),
         Text(
-          '101', 
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        SizedBox(height: 10),
-        Text(
-          'People are meditating right now',
+          'People are meditating\nright now',
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 14,
-            fontWeight: FontWeight.normal,
+            fontWeight: FontWeight.w600,
+            fontFamily: 'Inter',
+            color: Color(0xFF5C5C5C),
+            letterSpacing: -0.41,
           ),
         ),
         SizedBox(height: 10),
         ElevatedButton(
           onPressed: () {
-            // route
+            // toDo: redirect to meditation page
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF41C9E2),
@@ -117,12 +206,14 @@ class HomePage extends StatelessWidget {
               fontSize: 17,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w500,
+              letterSpacing: -0.41,
             ),
           ),
         ),
           ],
         ),
       ),
+      const SizedBox(height: 10),
       Container(
         margin: const EdgeInsets.symmetric(horizontal: 40),
         padding: const EdgeInsets.all(40),
@@ -159,13 +250,15 @@ class HomePage extends StatelessWidget {
                   fontSize: 12,
                   fontWeight: FontWeight.normal,
                   color: Color(0xFF5C5C5C),
+                  fontFamily: 'Inter',
+                  letterSpacing: -0.41,
                 ),
               ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // route
+                // toDO: redirect to GABI-chat
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF41C9E2),

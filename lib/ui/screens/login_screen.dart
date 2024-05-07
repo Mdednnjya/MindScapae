@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 100,
             ),
             const SizedBox(height: 14),
-            SvgPicture.asset('assets/images/log_text.svg'),
+            SvgPicture.asset('assets/images/auth/log_text.svg'),
             const SizedBox(height: 72.0),
             Container(
               color: Colors.white,

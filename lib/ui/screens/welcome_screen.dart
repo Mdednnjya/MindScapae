@@ -27,7 +27,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.asset("assets/images/welcome_asset.svg"),
+                    SvgPicture.asset("assets/images/auth/welcome_asset.svg"),
                     SizedBox(height: 20),
                   ],
                 ),
