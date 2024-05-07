@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,7 +22,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CircleAvatar(
-              radius: 40,
+              radius: 30,
               backgroundImage: AssetImage('assets/images/people.png'),
             ),
             Flexible(
@@ -54,6 +55,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      const SizedBox(height: 20),
       Container(
         padding: const EdgeInsets.fromLTRB(55, 5, 55, 1),
         child: Column(
@@ -105,48 +107,78 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             // route
           },
-          child: Text('Join them'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF41C9E2),
+          ),
+          child: const Text(
+            'Join now',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 17,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ),
           ],
         ),
       ),
       Container(
+        margin: const EdgeInsets.symmetric(horizontal: 40),
         padding: const EdgeInsets.all(40),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.1),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3),
+            ),
+          ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-        Image.asset(
-          'assets/images/gabibanner.png',
-          width: 300,
-          height: 300,
-        ),
-        SizedBox(height: 10),
-        Text(
-          'Try GABI AI',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        SizedBox(height: 10),
-        Text(
-          'Heading 2',
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.normal,
-          ),
-        ),
-        SizedBox(height: 10),
-        ElevatedButton(
-          onPressed: () {
-            // route
-          },
-          child: Text('Chat Now'),
-        ),
+            SvgPicture.asset("assets/images/home/gabi_banner.svg"),
+            const SizedBox(height: 30),
+            const Text(
+              'Try GABI AI',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 10),
+            const Center(
+              child: Text(
+                "Explore a safe space where you can share your thoughts, feelings, and concerns. Whether you're seeking advice or simply need someone to listen, GABI is here for you",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.normal,
+                  color: Color(0xFF5C5C5C),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // route
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF41C9E2),
+              ),
+              child: const Text(
+                'Chat Now',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
           ],
         ),
       ),

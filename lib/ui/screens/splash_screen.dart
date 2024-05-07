@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindscape/ui/screens/navbar.dart';
+import 'package:mindscape/ui/screens/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => NavBar()),
+        MaterialPageRoute(builder: (context) => WelcomeScreen()),
       );
     });
   }

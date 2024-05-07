@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mindscape/ui/screens/login_Screen.dart';
+import 'sign_screen.dart';
 
 
-class WelcomePage extends StatelessWidget {
+class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,7 @@ class WelcomePage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.asset("assets/images/welcome-asset.svg"),
+                    SvgPicture.asset("assets/images/welcome_asset.svg"),
                     SizedBox(height: 20),
                   ],
                 ),
@@ -64,7 +66,10 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // reDirect to sign_screen.dart
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUpScreen()),
+                  );
                 },
                 child: Text(
                   'Create an Account',
@@ -89,7 +94,10 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // reDirect to login_screen.dart
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
                 },
                 child: Text(
                   'Log in',
