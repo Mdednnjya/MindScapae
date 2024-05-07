@@ -62,7 +62,10 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/images/welcome-asset.svg
+    - assets/images/home/
+    - assets/images/icons/
+    - assets/images/welcome_asset.svg
+    - assets/images/logo_no_text.svg
     # - assets/fonts/
     # - assets/data/
 
