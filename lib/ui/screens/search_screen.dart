@@ -28,7 +28,7 @@ class SearchScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      // Tambahkan logika untuk menampilkan form pencarian
+                      // todo
                     },
                     child: Image.asset(
                       'assets/images/search/Search.png',
@@ -48,7 +48,7 @@ class SearchScreen extends StatelessWidget {
                       height: 300,
                       padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF9F9F9),
+                        color: const Color(0x87F7F7F),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
