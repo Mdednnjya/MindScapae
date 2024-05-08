@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../widgets/mood_button.dart';
 import '../utils/feedback_utils.dart';
+import 'chat_screen.dart';
+import 'navbar.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -258,7 +260,12 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // toDO: redirect to GABI-chat
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NavBar(selectedIndex: 2),
+                  ),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF41C9E2),
