@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mindscape/ui/widgets/program_widget.dart';
+import 'quitezone_intro_screen.dart';
+
 
 class SearchScreen extends StatelessWidget {
+  const SearchScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +79,25 @@ class SearchScreen extends StatelessWidget {
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
-                                // Tambahkan logika untuk redirect ke halaman lain
+                                showGeneralDialog(
+                                  context: context,
+                                  pageBuilder: (context, animation, secondaryAnimation) {
+                                    return QuitezoneIntroScreen();
+                                  },
+                                  transitionBuilder: (context, animation, secondaryAnimation, child) {
+                                    final tween = Tween(
+                                      begin: Offset(0.0, 1.0),
+                                      end: Offset.zero,
+                                    );
+                                    final curvedAnimation =
+                                    CurvedAnimation(parent: animation, curve: Curves.decelerate);
+                                    return SlideTransition(
+                                      position: tween.animate(curvedAnimation),
+                                      child: child,
+                                    );
+                                  },
+                                  transitionDuration: Duration(milliseconds: 575),
+                                );
                               },
                               child: Text(
                                 'Learn more >',
@@ -105,7 +127,7 @@ class SearchScreen extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w800,
-                      fontSize: 19,
+                      fontSize: 18,
                       letterSpacing: -0.41,
                       height: 1.3,
                     ),
@@ -147,7 +169,7 @@ class SearchScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 18),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -155,8 +177,8 @@ class SearchScreen extends StatelessWidget {
                     'Podcast Programs',
                     style: TextStyle(
                       fontFamily: 'Inter',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 18,
                       letterSpacing: -0.41,
                       height: 1.3,
                     ),
@@ -165,11 +187,10 @@ class SearchScreen extends StatelessWidget {
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
                       onTap: () {
-                        // Tambahkan logika atau fungsi lain yang ingin Anda eksekusi
                         print('Button Learn More clicked');
                       },
                       child: Text(
-                        'Learn more >',
+                        'View all',
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontWeight: FontWeight.bold,

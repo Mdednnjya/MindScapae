@@ -41,7 +41,7 @@ class ProgramWidget extends StatelessWidget {
               fit: BoxFit.contain,
               height: 100,
             ),
-            const SizedBox(height: 18),
+            const SizedBox(height: 15),
             Text(
               text,
               style: const TextStyle(

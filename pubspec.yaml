@@ -108,6 +108,8 @@ flutter:
          - asset: assets/fonts/Inter-Regular.ttf
          - asset: assets/fonts/Inter-SemiBold.ttf
          - asset: assets/fonts/Inter-Thin.ttf
+         - asset: assets/fonts/sf_pro/SFPRODISPLAYBOLD.OTF
+         - asset: assets/fonts/sf_pro/SFPRODISPLAYMEDIUM.OTF
 
   #   - family: Trajan Pro
   #     fonts:
