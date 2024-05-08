@@ -5,6 +5,7 @@ import 'ui/screens/welcome_screen.dart';
 import 'ui/screens/sign_screen.dart';
 import 'ui/screens/login_screen.dart';
 import 'ui/screens/navbar.dart';
+import 'ui/screens/search_screen.dart';
 
 void main() {
   runApp(MyApp());
