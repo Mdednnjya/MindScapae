@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindscape/ui/screens/sub/chat_gabi.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -15,28 +16,33 @@ class ChatScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          Text(
+            Text(
             'Heyaaa, Wanna start a chat today?',
             style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.bold,
+              fontSize: 17,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'SF Pro Display',
             ),
-          ),
+            ),
           SizedBox(height: 10),
-          Text(
+            Text(
             'Choose which service you want to use',
             style: TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w300,
+              fontSize: 13,
+              fontWeight: FontWeight.w300,
+              fontFamily: 'SF Pro Display',
             ),
-          ),
+            ),
           ],
         ),
         ),
         GestureDetector(
         //gabi
         onTap: () {
-          // route ke chat GABI
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ChatGabi()),
+          );
         },
         child: Container(
           width: double.infinity,
@@ -64,22 +70,23 @@ class ChatScreen extends StatelessWidget {
               height: 45,
               ),
               Text(
-              'GABI',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
+                'GABI',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontFamily: 'SF Pro Display',
+                ),
               ),
               SizedBox(height: 5),
               Text(
-              'Chat with your personal AI therapist',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
-                color: Colors.black,
-              ),
-              
+                'Chat with your personal AI therapist',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.black,
+                  fontFamily: 'SF Pro Display',
+                ),
               ),
             ],
             ),
@@ -107,7 +114,6 @@ class ChatScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: 40),
             child: CircleAvatar(
               radius: 35,
-              backgroundImage: AssetImage('assets/images/icons/therapist_ico.png'),
             ),
             ),
             SizedBox(width: 20),
@@ -118,21 +124,23 @@ class ChatScreen extends StatelessWidget {
               height: 45,
               ),
               Text(
-              'Certified Therapist',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
+                'Certified Therapist',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontFamily: 'SF Pro Display',
+                ),
               ),
               SizedBox(height: 5),
               Text(
-              'Chat with our trusted therapist',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
-                color: Colors.black,
-              ),
+                'Chat with our trusted therapist',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.black,
+                  fontFamily: 'SF Pro Display',
+                ),
               ),
             ],
             ),
@@ -146,8 +154,9 @@ class ChatScreen extends StatelessWidget {
         child: Text(
           'Try Saying: ',
           style: TextStyle(
-          fontSize: 17,
-          fontWeight: FontWeight.bold,
+            fontSize: 17,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'SF Pro Display',
           ),
         ),
         ),
@@ -180,11 +189,12 @@ class ChatScreen extends StatelessWidget {
                 height: 25,
               ),
               Text(
-                'GABI',
+                'GABI :',
                 style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+                  fontSize: 20,
+                    fontWeight: FontWeight.normal,
+                  color: Colors.black,
+                  fontFamily: 'SF Pro Display',
                 ),
               ),
             ],
