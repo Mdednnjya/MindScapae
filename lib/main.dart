@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MindScape',
       debugShowCheckedModeBanner: false,
-      home: QuitezoneIntroScreen(),
+      home: NavBar(),
       initialRoute: '/',
       onGenerateRoute: Routes.generateRoute,
     );
