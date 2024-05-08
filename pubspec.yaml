@@ -66,6 +66,13 @@ flutter:
     - assets/images/home/
     - assets/images/home/daun.svg
     - assets/images/home/Live.svg
+    - assets/images/search/
+    - assets/images/search/quitezone_asset.svg
+    - assets/images/search/relationship_asset.svg
+    - assets/images/search/self_confidance.svg
+    - assets/images/search/self_grow.svg
+    - assets/images/search/peaceful_talk.svg
+    - assets/images/search/Search.svg
     - assets/images/icons/
     - assets/images/auth/
     - assets/images/auth/log_text.svg
