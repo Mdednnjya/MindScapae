@@ -12,8 +12,19 @@ class _ChatGabiState extends State<ChatGabi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat Gabi'),
+      title: Row(
+        children: [
+        CircleAvatar(
+          backgroundImage: AssetImage('assets/images/icons/gabi_av.png'),
+          radius: 25,
+        ),
+        SizedBox(width: 20),
+        Text('Chat Gabi'),
+        ],
       ),
+      toolbarHeight: 80, // Adjust the toolbar height as needed
+      ),
+      
     );
   }
 }
