@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mindscape/ui/screens/sub/chat_gabi.dart';
+import 'package:mindscape/ui/screens/sub/gabi/chat_gabi.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
