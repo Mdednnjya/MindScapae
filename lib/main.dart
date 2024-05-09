@@ -6,6 +6,8 @@ import 'ui/screens/sign_screen.dart';
 import 'ui/screens/login_screen.dart';
 import 'ui/screens/navbar.dart';
 import 'ui/screens/search_screen.dart';
+import 'ui/screens/quitezone_intro_screen.dart';
+import 'package:mindscape/ui/utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
       title: 'MindScape',
       debugShowCheckedModeBanner: false,
       home: NavBar(),
+      initialRoute: '/',
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }
