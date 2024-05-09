@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mindscape/ui/screens/sub/gabi/chat_gabi.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -39,10 +38,7 @@ class ChatScreen extends StatelessWidget {
         GestureDetector(
         //gabi
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ChatGabi()),
-          );
+          Navigator.pushNamed(context, '/chat_gabi');
         },
         child: Container(
           width: double.infinity,
