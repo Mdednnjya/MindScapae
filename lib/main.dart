@@ -8,6 +8,7 @@ import 'ui/screens/navbar.dart';
 import 'ui/screens/search_screen.dart';
 import 'ui/screens/quitezone_intro_screen.dart';
 import 'package:mindscape/ui/utils/routes.dart';
+import 'ui/screens/user_screen.dart';
 
 void main() {
   runApp(MyApp());

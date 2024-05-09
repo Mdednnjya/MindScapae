@@ -64,6 +64,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/home/
+    - assets/images/user/
     - assets/images/home/daun.svg
     - assets/images/home/Live.svg
     - assets/images/search/
