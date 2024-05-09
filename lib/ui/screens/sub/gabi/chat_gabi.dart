@@ -66,11 +66,11 @@ class _ChatGabiState extends State<ChatGabi> {
                 ),
               ),
               SizedBox(width: 10),
-              ElevatedButton(
+              IconButton(
                 onPressed: () {
                   // Send message logic
                 },
-                child: Text('Send'),
+                icon: Icon(Icons.send),
               ),
                 ],
               ),
