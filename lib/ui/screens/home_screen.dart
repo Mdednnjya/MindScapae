@@ -259,14 +259,9 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => NavBar(selectedIndex: 2),
-                  ),
-                );
-              },
+                onPressed: () {
+                Navigator.pushNamed(context, '/chat_gabi');
+                },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF41C9E2),
               ),
