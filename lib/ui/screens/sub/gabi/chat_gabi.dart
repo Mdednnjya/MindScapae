@@ -1,28 +1,77 @@
+import 'dart:async';
+import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
+import 'package:mindscape/consts.dart';
 import 'package:mindscape/ui/screens/sub/gabi/chatmessage.dart';
 
 class ChatGabi extends StatefulWidget {
-  const ChatGabi({super.key});
+  const ChatGabi({Key? key}) : super(key: key);
 
   @override
   State<ChatGabi> createState() => _ChatGabiState();
 }
 
 class _ChatGabiState extends State<ChatGabi> {
+  final _openAI = OpenAI.instance.build(
+    token: OPENAAI_API_KEY,
+    baseOption: HttpSetup(receiveTimeout: const Duration(seconds: 5)),
+    enableLog: true,
+  );
+
   final TextEditingController _messageController = TextEditingController();
   final List<ChatMessage> _messages = [];
+  String user = 'Lambda';
 
-  void _sendMessage() {
-    ChatMessage _message = ChatMessage(
+  bool _isTyping = false;
+
+  void _sendMessage(String sender, Role role) {
+    if (_messageController.text.isEmpty) return;
+    ChatMessage message = ChatMessage(
       text: _messageController.text,
-      sender: 'User',
+      sender: sender,
+      role: role,
     );
 
-    setState(() {
-      _messages.insert(0, _message);
-    });
+    _getGabiResponse(message);
 
     _messageController.clear();
+  }
+
+  Future<void> _getGabiResponse(ChatMessage message) async {
+    setState(() {
+      _messages.insert(0, message);
+      _isTyping = false;
+    });
+
+    List<Messages> _messageHistory = _messages.reversed.map((message) {
+      return Messages(
+        role: message.role == 'user' ? Role.user : Role.assistant,
+        content: message.text,
+      );
+    }).toList();
+
+    final request = ChatCompleteText(
+      model: GptTurboChatModel(),
+      messages: _messageHistory,
+      maxToken: 200,
+    );
+
+    final response = await _openAI.onChatCompletion(request: request);
+
+    for (var element in response!.choices) {
+      if (element.message != null) {
+        setState(() {
+          _messages.insert(
+            0,
+            ChatMessage(
+              text: element.message!.content,
+              sender: 'GABI',
+              role: Role.assistant,
+            ),
+          );
+        });
+      }
+    }
   }
 
   @override
@@ -53,8 +102,7 @@ class _ChatGabiState extends State<ChatGabi> {
                   itemCount: _messages.length,
                   itemBuilder: (context, index) {
                     final message = _messages[index];
-                    final isUserMessage = message.sender == 'User';
-
+                    final isUserMessage = message.sender != 'GABI';
                     return Align(
                       alignment: isUserMessage
                           ? Alignment.centerRight
@@ -76,14 +124,16 @@ class _ChatGabiState extends State<ChatGabi> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               color: isUserMessage
-                                  ? Colors.blue
-                                  : Color(0xFF41C9E2),
+                                  ? Color(0xFF41C9E2)
+                                  : Colors.grey[300],
                             ),
                             padding: EdgeInsets.all(12),
                             child: Text(
                               message.text,
                               style: TextStyle(
-                                color: Colors.white,
+                                color: isUserMessage
+                                    ? Colors.grey[300]
+                                    : Colors.black,
                                 fontSize: 16,
                               ),
                             ),
@@ -112,7 +162,7 @@ class _ChatGabiState extends State<ChatGabi> {
                         child: TextField(
                           controller: _messageController,
                           onSubmitted: (value) {
-                            _sendMessage();
+                            _sendMessage(user, Role.user);
                           },
                           maxLines: null,
                           decoration: InputDecoration(
@@ -129,7 +179,7 @@ class _ChatGabiState extends State<ChatGabi> {
                       SizedBox(width: 10),
                       IconButton(
                         onPressed: () {
-                          _sendMessage();
+                          _sendMessage(user, Role.user);
                         },
                         icon: Icon(Icons.send),
                       ),

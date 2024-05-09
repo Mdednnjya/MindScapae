@@ -1,10 +1,12 @@
+import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 
 class ChatMessage extends StatelessWidget {
-  const ChatMessage({super.key, required this.text, required this.sender});
+  const ChatMessage({super.key, required this.text, required this.sender, required this.role});
 
   final String text;
   final String sender;
+  final Role role; 
 
   @override
   Widget build(BuildContext context) {
