@@ -49,48 +49,54 @@ class ChatScreen extends StatelessWidget {
           height: 150,
           margin: EdgeInsets.only(left: 40, right: 40, top: 30),
           decoration: BoxDecoration(
-          color: Color(0xFF41C9E2),
-          borderRadius: BorderRadius.circular(40),
+            color: Color(0xFF41C9E2),
+            borderRadius: BorderRadius.circular(40),
           ),
           child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-            padding: EdgeInsets.only(left: 40),
-            child: CircleAvatar(
-              radius: 35,
-              backgroundImage: AssetImage('assets/images/icons/gabi_av.png'),
-            ),
-            ),
-            SizedBox(width: 20),
-            Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+          padding: EdgeInsets.only(left: 40),
+          child: CircleAvatar(
+            radius: 35,
+            backgroundImage: AssetImage('assets/images/icons/gabi_av.png'),
+          ),
+              ),
+              SizedBox(width: 20),
+              Expanded(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-              height: 45,
+                height: 45,
               ),
               Text(
                 'GABI',
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontFamily: 'SF Pro Display',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontFamily: 'SF Pro Display',
                 ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: 5),
               Text(
                 'Chat with your personal AI therapist',
                 style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w300,
-                  color: Colors.black,
-                  fontFamily: 'SF Pro Display',
+            fontSize: 16,
+            fontWeight: FontWeight.w300,
+            color: Colors.black,
+            fontFamily: 'SF Pro Display',
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
-            ),
-          ],
+          ),
+              ),
+            ],
           ),
         ),
         ),

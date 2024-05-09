@@ -27,58 +27,60 @@ class _ChatGabiState extends State<ChatGabi> {
       body: SafeArea(
         child: Column(
           children: [
-            Expanded(
+        Expanded(
+          child: Container(
+            // Chat area
+          ),
+        ),
+        Container(
+          // Chat area
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            reverse: true,
+            child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 16, right: 16, bottom: 30),
               child: Container(
-                // Chat area
-              ),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(15),
             ),
-            Container(
-              // Chat area
-            ),
-            Expanded(
-              child: ListView(
-              reverse: true,
-              children: [
-                Padding(
-                padding: EdgeInsets.only(left: 16, right: 16, bottom: 30),
-                child: Container(
-                  decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
-                  borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                  padding: EdgeInsets.only(left: 18, right: 18),
-                  child: Row(
-                    children: [
-                    Expanded(
-                      child: TextField(
-                      maxLines: null,
-                      decoration: InputDecoration(
-                        hintText: 'Type your message...',
-                        enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.transparent),
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.transparent),
-                        ),
-                      ),
-                      ),
-                    ),
-                    SizedBox(width: 10),
-                    ElevatedButton(
-                      onPressed: () {
-                      // Send message logic
-                      },
-                      child: Text('Send'),
-                    ),
-                    ],
-                  ),
+            child: Padding(
+              padding: EdgeInsets.only(left: 18, right: 18),
+              child: Row(
+                children: [
+              Expanded(
+                child: TextField(
+                  maxLines: null,
+                  decoration: InputDecoration(
+                hintText: 'Type your message...',
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.transparent),
+                ),
                   ),
                 ),
-                ),
-              ],
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  // Send message logic
+                },
+                child: Text('Send'),
+              ),
+                ],
               ),
             ),
+              ),
+            ),
+          ],
+            ),
+          ),
+        ),
           ],
         ),
       ),
