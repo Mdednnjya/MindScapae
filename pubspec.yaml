@@ -67,8 +67,17 @@ flutter:
     - assets/images/
     - assets/images/home/
     - assets/images/user/
+    - assets/images/user/subscription/back_button.svg
+    - assets/images/user/subscription/asset_subs.svg
+    - assets/images/user/subscription/billing.svg
+    - assets/images/user/subscription/crown.svg
+    - assets/images/user/subscription/list_checklist.svg
+    - assets/images/user/subscription/grey_right_arrow.svg
+    - assets/images/user/manage_account/right_arrow.svg
+    - assets/images/user/manage_account/manage_account_asset.svg
     - assets/images/home/daun.svg
     - assets/images/home/Live.svg
+    - assets/images/user/settings/settings_asset.svg
     - assets/images/search/
     - assets/images/search/quitezone_asset.svg
     - assets/images/search/relationship_asset.svg

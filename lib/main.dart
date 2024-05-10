@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:mindscape/consts.dart';
 import 'package:mindscape/ui/screens/home_screen.dart';
+import 'package:mindscape/ui/screens/subscription_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/screens/welcome_screen.dart';
 import 'ui/screens/sign_screen.dart';
