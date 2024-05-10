@@ -59,7 +59,7 @@ class _GabiGeminiState extends State<GabiGemini> {
           String response = event.content?.parts
                   ?.fold("", (previous, current) => "$previous${current.text}") ??
               "";
-          lastMessage.text = response;
+          lastMessage.text += response;
           setState(() {
             messages = [lastMessage!, ...messages];
           });
