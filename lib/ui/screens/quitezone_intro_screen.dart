@@ -107,7 +107,7 @@ class QuitezoneIntroScreen extends StatelessWidget {
                                         fontFamily: 'Inter',
                                         letterSpacing: -0.41,
                                         height: 1.5,
-                                        color: Colors.black, // Warna teks hitam
+                                        color: Colors.black,
                                       ),
                                     ),
                                     TextSpan(
@@ -149,7 +149,7 @@ class QuitezoneIntroScreen extends StatelessWidget {
                                         fontFamily: 'Inter',
                                         letterSpacing: -0.41,
                                         height: 1.5,
-                                        color: Colors.black, // Warna teks hitam
+                                        color: Colors.black,
                                       ),
                                     ),
                                     TextSpan(
@@ -222,18 +222,18 @@ class QuitezoneIntroScreen extends StatelessWidget {
                         // todo
                       },
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF41C9E2)), // Warna latar belakang
-                        minimumSize: MaterialStateProperty.all<Size>(Size(170, 34)), // Ukuran tombol
+                        backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF41C9E2)),
+                        minimumSize: MaterialStateProperty.all<Size>(Size(170, 34)),
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(11.0), // Corner radius 11
+                            borderRadius: BorderRadius.circular(11.0),
                           ),
                         ),
                       ),
                       child: Text(
                         'Try it free',
                         style: TextStyle(
-                          color: Colors.white, // Warna teks
+                          color: Colors.white,
                           fontSize: 17.0,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Inter',

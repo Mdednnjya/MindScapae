@@ -116,7 +116,7 @@ class ManageAccountPage extends StatelessWidget {
                                       height: 1.47,
                                     ),
                                   ),
-                                  SizedBox(width: 8.0), // Jarak antara teks dan SVG
+                                  SizedBox(width: 8.0),
                                   SvgPicture.asset('assets/images/user/manage_account/right_arrow.svg'),
                                 ],
                               ),
@@ -149,7 +149,7 @@ class ManageAccountPage extends StatelessWidget {
                                       height: 1.47,
                                     ),
                                   ),
-                                  SizedBox(width: 8.0), // Jarak antara teks dan SVG
+                                  SizedBox(width: 8.0),
                                   SvgPicture.asset('assets/images/user/manage_account/right_arrow.svg'),
                                 ],
                               ),

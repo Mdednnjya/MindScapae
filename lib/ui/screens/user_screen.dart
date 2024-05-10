@@ -199,7 +199,6 @@ class UserScreen extends StatelessWidget {
                   textColor: Color(0xFFDE5B5B),
                   fontWeight: FontWeight.w600,
                   onTap: () {
-                    // todo
                   },
                 ),
               ),

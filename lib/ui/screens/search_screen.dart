@@ -32,7 +32,6 @@ class SearchScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      // todo
                     },
                     child: Image.asset(
                       'assets/images/search/Search.png',
@@ -136,7 +135,6 @@ class SearchScreen extends StatelessWidget {
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
                       onTap: () {
-                        // Tambahkan logika untuk redirect ke halaman lain
                       },
                       child: Text(
                         'View all',
