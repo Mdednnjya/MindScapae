@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mindscape/services/auth_service.dart';
 import 'package:mindscape/ui/screens/sign_screen.dart';
 import 'package:mindscape/ui/screens/navbar.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final AuthService _authService = AuthService();
 
   bool _obscurePassword = true;
 
@@ -28,106 +31,123 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: Center(
+      child: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 74),
-            Image.asset(
-              'assets/images/logo_no_text.png',
-              width: 300,
-              height: 100,
-            ),
-            const SizedBox(height: 14),
-            SvgPicture.asset('assets/images/auth/log_text.svg'),
-            const SizedBox(height: 72.0),
-            Container(
-              color: Colors.white,
-              padding: const EdgeInsets.all(16.0),
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 74),
+          Image.asset(
+          'assets/images/logo_no_text.png',
+          width: 300,
+          height: 100,
+          ),
+          const SizedBox(height: 14),
+          SvgPicture.asset('assets/images/auth/log_text.svg'),
+          const SizedBox(height: 72.0),
+          Container(
+          color: Colors.white,
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+            Form(
+              key: _formKey,
               child: Column(
-                children: [
-                  Form(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                        _buildTextFormField(
-                          controller: _emailController,
-                          labelText: 'Email address',
-                          hintText: 'e.g. Enter email',
-                        ),
-                        const SizedBox(height: 25.0),
-                        _buildTextFormField(
-                          controller: _passwordController,
-                          labelText: 'Password',
-                          obscureText: _obscurePassword,
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _obscurePassword
-                                  ? Icons.visibility_off
-                                  : Icons.visibility,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _obscurePassword = !_obscurePassword;
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
+              children: [
+                _buildTextFormField(
+                controller: _emailController,
+                labelText: 'Email address',
+                hintText: 'e.g. Enter email',
+                ),
+                const SizedBox(height: 25.0),
+                _buildTextFormField(
+                controller: _passwordController,
+                labelText: 'Password',
+                obscureText: _obscurePassword,
+                suffixIcon: IconButton(
+                  icon: Icon(
+                  _obscurePassword
+                    ? Icons.visibility_off
+                    : Icons.visibility,
                   ),
-                  const SizedBox(height: 32.0),
-                  SizedBox(
-                    width: 350,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          // todo: Handle login
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF41C9E2),
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                        textStyle: const TextStyle(
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
-                        ),
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          'Login',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                  onPressed: () {
+                  setState(() {
+                    _obscurePassword = !_obscurePassword;
+                  });
+                  },
+                ),
+                ),
+              ],
               ),
             ),
-            const SizedBox(height: 16.0),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const NavBar()),
-                );
-              },
-              child: const Text(
-                'forgot password?',
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
+            const SizedBox(height: 32.0),
+            SizedBox(
+              width: 350,
+              child: ElevatedButton(
+                onPressed: () async {
+                if (_formKey.currentState?.validate() ?? false) {
+                  _formKey.currentState?.save();
+                  final email = _emailController.text;
+                  final password = _passwordController.text;
+                  final isLoggedIn = await _authService.login(email, password);
+                  if (isLoggedIn) {
+                    Navigator.pushNamed(context, '/');
+                  } else {
+                    _emailController.clear();
+                    _passwordController.clear();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Invalid email or password'),
+                      backgroundColor: Colors.red,
+                      ),
+                    );
+                  }
+                }
+                },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF41C9E2),
+                shape: RoundedRectangleBorder(
+                side: const BorderSide(color: Colors.white),
+                borderRadius: BorderRadius.circular(25.0),
+                ),
+                textStyle: const TextStyle(
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
                 ),
               ),
+              child: const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text(
+                'Login',
+                style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ),
             ),
-          ],
+            ],
+          ),
+          ),
+          const SizedBox(height: 16.0),
+          InkWell(
+          onTap: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const NavBar()),
+            );
+          },
+          child: const Text(
+            'forgot password?',
+            style: TextStyle(
+            color: Colors.blue,
+            decoration: TextDecoration.underline,
+            ),
+          ),
+          ),
+        ],
         ),
+      ),
       ),
     );
   }

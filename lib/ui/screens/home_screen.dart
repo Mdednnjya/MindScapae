@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.black,
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/search');
+                    Navigator.pushNamed(context, '/noti');
                   },
                 ),
                 // Menambahkan bulatan merah ketika ada notifikasi
