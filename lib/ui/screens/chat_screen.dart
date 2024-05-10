@@ -36,7 +36,6 @@ class ChatScreen extends StatelessWidget {
         ),
         ),
         GestureDetector(
-        //gabi
         onTap: () {
           Navigator.pushNamed(context, '/chat_gabi');
         },
@@ -97,9 +96,7 @@ class ChatScreen extends StatelessWidget {
         ),
         ),
         GestureDetector(
-        //expert
         onTap: () {
-          // route ke chat expert
         },
         child: Container(
           width: double.infinity,

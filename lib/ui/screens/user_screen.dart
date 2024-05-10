@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mindscape/ui/widgets/row_widget.dart';
+import 'subscription_screen.dart';
+import 'manage_account_screen.dart';
+import 'settings_screen.dart';
 
 class UserScreen extends StatelessWidget {
   const UserScreen({Key? key}) : super(key: key);
@@ -97,30 +100,87 @@ class UserScreen extends StatelessWidget {
                       leading: 'assets/images/user/membership_card.png',
                       title: 'Subscription',
                       trailing: 'assets/images/user/collapse_arrow.png',
-                      textColor: Color(0xFF888888),
+                      textColor: Color(0xFF5B5B5B),
                       fontWeight: FontWeight.w600,
                       onTap: () {
-                        // todo
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation, secondaryAnimation) =>
+                                SubscriptionPage(),
+                            transitionDuration: Duration(milliseconds: 575),
+                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                              return SlideTransition(
+                                position: Tween<Offset>(
+                                  begin: const Offset(1.0, 0.0),
+                                  end: Offset.zero,
+                                ).animate(CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.fastOutSlowIn,
+                                )),
+                                child: child,
+                              );
+                            },
+                          ),
+                        );
                       },
                     ),
                     RowWidget(
                       leading: 'assets/images/user/user_male.png',
                       title: 'Manage account',
                       trailing: 'assets/images/user/collapse_arrow.png',
-                      textColor: Color(0xFF888888),
+                      textColor: Color(0xFF5B5B5B),
                       fontWeight: FontWeight.w600,
                       onTap: () {
-                        // todo
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation, secondaryAnimation) =>
+                                ManageAccountPage(),
+                            transitionDuration: Duration(milliseconds: 575),
+                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                              return SlideTransition(
+                                position: Tween<Offset>(
+                                  begin: const Offset(1.0, 0.0),
+                                  end: Offset.zero,
+                                ).animate(CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.fastOutSlowIn,
+                                )),
+                                child: child,
+                              );
+                            },
+                          ),
+                        );
                       },
                     ),
                     RowWidget(
                       leading: 'assets/images/user/gear.png',
                       title: 'Settings',
                       trailing: 'assets/images/user/collapse_arrow.png',
-                      textColor: Color(0xFF888888),
+                      textColor: Color(0xFF5B5B5B),
                       fontWeight: FontWeight.w600,
                       onTap: () {
-                        // todo
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation, secondaryAnimation) =>
+                                SettingsPage(),
+                            transitionDuration: Duration(milliseconds: 575),
+                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                              return SlideTransition(
+                                position: Tween<Offset>(
+                                  begin: const Offset(1.0, 0.0),
+                                  end: Offset.zero,
+                                ).animate(CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.fastOutSlowIn,
+                                )),
+                                child: child,
+                              );
+                            },
+                          ),
+                        );
                       },
                     ),
                   ],
@@ -139,7 +199,6 @@ class UserScreen extends StatelessWidget {
                   textColor: Color(0xFFDE5B5B),
                   fontWeight: FontWeight.w600,
                   onTap: () {
-                    // todo
                   },
                 ),
               ),

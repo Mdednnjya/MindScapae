@@ -106,33 +106,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
               children: [
                 _buildSocialButton(
                   onPressed: () {
-                    // Handle Facebook sign-up
                   },
                   asset: 'assets/images/auth/facebook_logo.svg',
                 ),
                 const SizedBox(width: 16.0),
                 _buildSocialButton(
                   onPressed: () {
-                    // Handle Twitter sign-up
                   },
                   asset: 'assets/images/auth/twitter_logo.svg',
                 ),
                 const SizedBox(width: 16.0),
                 _buildSocialButton(
                   onPressed: () {
-                    // Handle Google sign-up
                   },
                   asset: 'assets/images/auth/google_logo.svg',
                 ),
               ],
             ),
             const SizedBox(height: 32.0),
-            SizedBox( //Signup
+            SizedBox(
               width: 350,
               child: ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    // Handle sign-up
                   }
                 },
                 style: ElevatedButton.styleFrom(
@@ -159,7 +155,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             const SizedBox(height: 16.0),
             InkWell(
               onTap: () {
-                // Navigate to login screen
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const LoginScreen()),

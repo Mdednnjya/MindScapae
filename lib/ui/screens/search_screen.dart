@@ -12,7 +12,7 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 56.0),
+          padding: const EdgeInsets.symmetric(horizontal: 55.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -32,7 +32,6 @@ class SearchScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      // todo
                     },
                     child: Image.asset(
                       'assets/images/search/Search.png',
@@ -90,7 +89,7 @@ class SearchScreen extends StatelessWidget {
                                       end: Offset.zero,
                                     );
                                     final curvedAnimation =
-                                    CurvedAnimation(parent: animation, curve: Curves.decelerate);
+                                    CurvedAnimation(parent: animation, curve: Curves.fastEaseInToSlowEaseOut);
                                     return SlideTransition(
                                       position: tween.animate(curvedAnimation),
                                       child: child,
@@ -136,7 +135,6 @@ class SearchScreen extends StatelessWidget {
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
                       onTap: () {
-                        // Tambahkan logika untuk redirect ke halaman lain
                       },
                       child: Text(
                         'View all',
