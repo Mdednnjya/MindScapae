@@ -4,11 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:mindscape/consts.dart';
 import 'package:mindscape/ui/screens/home_screen.dart';
-<<<<<<< HEAD
 import 'package:mindscape/ui/utils/utils.dart';
-=======
 import 'package:mindscape/ui/screens/subscription_screen.dart';
->>>>>>> d506f596d444a96d523c4ed4deeac925c8e1eb49
 import 'ui/screens/splash_screen.dart';
 import 'ui/screens/welcome_screen.dart';
 import 'ui/screens/sign_screen.dart';
