@@ -1,5 +1,8 @@
 # MindScape
 
+![Logo](https://raw.githubusercontent.com/Mdednnjya/MindScape/main/assets/images/logo_no_text.png)
+
+
 Mindscape is an innovative application designed to address the mental health issues by providing an easy-to-use, affordable, and supportive application to help users manage their depression. By integrating AI technology and psychology, we offer effective features for education and depression management.
 
 ## Key Features
@@ -19,8 +22,6 @@ In the future, we plan to expand our app with additional features such as self-h
 ### Team Name: Nyamnyam Tech
 
 #### Team Members:
-
-![Logo]([images/logo.svg](https://www.google.co.id/url?sa=i&url=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3AGoogle-flutter-logo.svg&psig=AOvVaw2Aj61iAQ8KH4lYBVeYJZM6&ust=1715445441926000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPiK7rLCg4YDFQAAAAAdAAAAABAE))
 
 | Name |
 |------|
