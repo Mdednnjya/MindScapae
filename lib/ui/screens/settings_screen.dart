@@ -185,11 +185,11 @@ class SettingsPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 125),
+                    SizedBox(height: 75),
                     SvgPicture.asset(
                       'assets/images/user/settings/settings_asset.svg',
                     ),
-                    SizedBox(height: 275),
+                    SizedBox(height: 10),
                     Center(
                       child: Text(
                         'Copyright 2024 MindScape v4.3',

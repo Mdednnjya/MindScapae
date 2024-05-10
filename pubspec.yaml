@@ -90,6 +90,8 @@ flutter:
     - assets/images/search/peaceful_talk.svg
     - assets/images/search/Search.svg
     - assets/images/icons/
+    - assets/images/icons/pro_label.svg
+    - assets/images/icons/certified_herapist.svg
     - assets/images/auth/
     - assets/images/auth/log_text.svg
     - assets/images/auth/create_an account_text.svg
