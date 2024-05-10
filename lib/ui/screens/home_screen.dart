@@ -4,7 +4,7 @@ import '../widgets/mood_button.dart';
 import '../utils/feedback_utils.dart';
 import 'chat_screen.dart';
 import 'navbar.dart';
-import '../screens/sub/gabi/chat_gabi.dart';
+import '../screens/sub/gabi/gabi_gemini.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key});
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                         // todo: popup notification
                       },
                     ),
-                    // Menambahkan bulatan merah ketika ada notifikasi
+                    // todo : notification markers
                     // if (_hasNotification)
                     //   Positioned(
                     //     top: 0,
@@ -159,11 +159,6 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 5),
           Container(
             padding: const EdgeInsets.all(20),
-            // decoration: BoxDecoration(
-            //   image: DecorationImage(
-            // image: AssetImage('assets/images/home/daun.svg'),
-            //   ),
-            // ),
             child: Column(
               children: [
                 Row(
@@ -265,7 +260,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       PageRouteBuilder(
-                        pageBuilder: (context, animation, secondaryAnimation) => ChatGabi(),
+                        pageBuilder: (context, animation, secondaryAnimation) => GabiGemini(),
                         transitionDuration: Duration(milliseconds: 775),
                         transitionsBuilder: (context, animation, secondaryAnimation, child) {
                           final tween = Tween(

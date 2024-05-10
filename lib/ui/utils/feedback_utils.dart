@@ -11,21 +11,21 @@ void showFeedback(BuildContext context, String mood) {
       feedbackText = 'Thank you for sharing. Keep up the joyful mood!';
       iconData = Icons.sentiment_satisfied_alt;
       iconColor = Colors.green;
-      backgroundColor = Color(0xFFF3FDFF); // Warna latar belakang untuk joyful
+      backgroundColor = Color(0xFFF3FDFF);
       break;
     case 'anxious':
       feedbackText =
       'Thank you for sharing. Consider try our meditation feature to help calm your mind.';
       iconData = Icons.sentiment_dissatisfied;
       iconColor = Colors.amber;
-      backgroundColor = Color(0xFFFAFAF2); // Warna latar belakang untuk anxious
+      backgroundColor = Color(0xFFFAFAF2);
       break;
     case 'sad':
       feedbackText =
       'Thank you for sharing. We encourage you to try GABI AI as your personal consultation.';
       iconData = Icons.sentiment_very_dissatisfied;
       iconColor = Colors.red;
-      backgroundColor = Color(0xFFFFF6F6); // Warna latar belakang untuk sad
+      backgroundColor = Color(0xFFFFF6F6);
       break;
     default:
       feedbackText = 'Terima kasih telah berbagi mood Anda!';
@@ -47,7 +47,7 @@ void showFeedback(BuildContext context, String mood) {
             child: Text(
               feedbackText,
               style: TextStyle(
-                color: Colors.black, // Warna teks hitam
+                color: Colors.black,
                 fontFamily: 'Inter',
                 letterSpacing: -0.41,
               ),
