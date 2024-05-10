@@ -1,6 +1,9 @@
 # MindScape
 
-![Logo](https://raw.githubusercontent.com/Mdednnjya/MindScape/main/assets/images/logo_no_text.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Mdednnjya/MindScape/main/assets/images/logo_no_text.png" alt="Logo">
+</p>
+
 
 
 Mindscape is an innovative application designed to address the mental health issues by providing an easy-to-use, affordable, and supportive application to help users manage their depression. By integrating AI technology and psychology, we offer effective features for education and depression management.
