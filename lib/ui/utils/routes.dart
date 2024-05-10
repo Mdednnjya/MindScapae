@@ -5,7 +5,7 @@ import 'package:mindscape/ui/screens/navbar.dart';
 import 'package:mindscape/ui/screens/quitezone_intro_screen.dart';
 import 'package:mindscape/ui/screens/search_screen.dart';
 import 'package:mindscape/ui/screens/user_screen.dart';
-import 'package:mindscape/ui/screens/sub/gabi/chat_gabi.dart';
+import 'package:mindscape/ui/screens/sub/gabi/gabi_gemini.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -23,7 +23,7 @@ class Routes {
       case '/home':
         return MaterialPageRoute(builder: (_) => const HomePage());
       case '/chat_gabi':
-        return MaterialPageRoute(builder: (_) => const ChatGabi());
+        return MaterialPageRoute(builder: (_) => const GabiGemini());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

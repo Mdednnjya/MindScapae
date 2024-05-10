@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
+import 'package:mindscape/consts.dart';
 import 'package:mindscape/ui/screens/home_screen.dart';
 import 'ui/screens/splash_screen.dart';
 import 'ui/screens/welcome_screen.dart';
@@ -11,6 +13,9 @@ import 'package:mindscape/ui/utils/routes.dart';
 import 'ui/screens/user_screen.dart';
 
 void main() {
+  Gemini.init(
+    apiKey: GEMINI_API_KEY,
+  );
   runApp(MyApp());
 }
 
