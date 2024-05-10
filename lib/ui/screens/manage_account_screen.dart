@@ -192,11 +192,11 @@ class ManageAccountPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 125),
+                    SizedBox(height: 75),
                     SvgPicture.asset(
                       'assets/images/user/manage_account/manage_account_asset.svg',
                     ),
-                    SizedBox(height: 275),
+                    SizedBox(height: 10),
                     Center(
                       child: Text(
                         'Copyright 2024 MindScape v4.3',
@@ -212,7 +212,7 @@ class ManageAccountPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 52.0),
+              SizedBox(height: 2.0),
             ],
           ),
         ),
