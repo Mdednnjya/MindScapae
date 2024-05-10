@@ -1,16 +1,31 @@
-# mindscape
+# Depression Management App
 
-A new Flutter project.
+Our app offers a solution for mental health issues by providing an easy-to-use, affordable, and supportive application to help users manage their depression. By integrating AI technology and psychology, we offer effective features for education and depression management.
 
-## Getting Started
+## Key Features
 
-This project is a starting point for a Flutter application.
+1. **GABI**: An AI-powered chatbot trained with data from a psychologist, designed to provide quick service, create a comfortable user experience, and be available 24/7. Users can engage in dialogue with GABI as if conversing with a real psychologist, ensuring anonymity and reducing the stigma of discussing personal issues.
 
-A few resources to get you started if this is your first Flutter project:
+2. **QuietZone**: A feature that serves as a sanctuary for reducing stress levels. According to medical information from Mayo Clinic ("Meditation: A simple, fast way to reduce stress"), meditation can be an alternative to clearing the mind from the many causes of stress. QuietZone combines meditation with Virtual Reality (VR) to provide an immersive meditation experience in tranquil and natural environments. Users can choose from various settings without the need to physically travel, saving time and effort.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Our Solution
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Our app offers a solution for mental health issues by providing an easy-to-use, affordable, and supportive application to help users manage their depression. By integrating AI technology and psychology, we offer effective features for education and depression management.
+
+## Future Development
+
+In the future, we plan to expand our app with additional features such as self-help modules tailored to users' symptoms and a "tree" feature with daily challenges and rewards to motivate users to regularly manage their depression.
+
+### Team Name: Nyamnyam Tech
+
+#### Team Members:
+
+| Name |
+|------|
+| Made Narayan Danajaya |
+| Rochmanu Purnomohadi Erfitra |
+| I KADEK Surya Satya DHARMA |
+
+## About Flutter
+
+Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase.
