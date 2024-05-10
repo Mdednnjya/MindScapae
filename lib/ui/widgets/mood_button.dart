@@ -8,16 +8,18 @@ class MoodButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const MoodButton({
-    super.key,
+    Key? key,
     required this.emoji,
     required this.label,
     required this.mood,
     required this.isSelected,
     required this.onPressed,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double paddingValue = MediaQuery.of(context).size.width * 0.03; // Sesuaikan dengan resolusi layar
+
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -26,6 +28,7 @@ class MoodButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
+        padding: EdgeInsets.all(paddingValue), // Gunakan padding sesuai dengan resolusi layar
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

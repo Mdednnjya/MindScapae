@@ -83,7 +83,7 @@ class QuitezoneIntroScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 16.0),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Column(
                       children: [
                         Row(

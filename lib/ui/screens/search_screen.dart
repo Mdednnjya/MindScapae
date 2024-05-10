@@ -12,7 +12,7 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 56.0),
+          padding: const EdgeInsets.symmetric(horizontal: 55.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -90,7 +90,7 @@ class SearchScreen extends StatelessWidget {
                                       end: Offset.zero,
                                     );
                                     final curvedAnimation =
-                                    CurvedAnimation(parent: animation, curve: Curves.decelerate);
+                                    CurvedAnimation(parent: animation, curve: Curves.fastEaseInToSlowEaseOut);
                                     return SlideTransition(
                                       position: tween.animate(curvedAnimation),
                                       child: child,
