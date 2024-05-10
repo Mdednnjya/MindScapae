@@ -1,6 +1,6 @@
-# Depression Management App
+# MindScape
 
-Our app offers a solution for mental health issues by providing an easy-to-use, affordable, and supportive application to help users manage their depression. By integrating AI technology and psychology, we offer effective features for education and depression management.
+Mindscape is an innovative application designed to address the mental health issues by providing an easy-to-use, affordable, and supportive application to help users manage their depression. By integrating AI technology and psychology, we offer effective features for education and depression management.
 
 ## Key Features
 
