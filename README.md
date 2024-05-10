@@ -28,4 +28,4 @@ In the future, we plan to expand our app with additional features such as self-h
 
 ## About Flutter
 
-Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase.
+Flutter is an open-source UI software development kit created by Google. It allows developers to build applications for multiple platforms (Android, iOS, Web, and Desktop) from a single codebase using the Dart programming language. We chose Flutter for this project because it offers rapid development, a rich set of widgets, and a reactive framework that facilitates building high-performance, visually attractive, and natively compiled applications.
